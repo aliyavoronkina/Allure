@@ -3,16 +3,8 @@
 ## Allure отчеты
 
 ### Главная страница отчета
-![Главная страница Allure](images/allure-main.png)
+![allure-main](https://github.com/user/repo/assets/.../allure-main.png)
+
 
 ### Детали выполнения теста  
-![Детали теста](images/allure-details.png)
-
-## Запуск тестов
-```bash
-./gradlew clean test
-./gradlew allureReport allureServe
-```
-
-## Технологии
-- Java, Selenide, JUnit 5, Allure Framework
+![allure-details](https://github.com/user/repo/assets/.../allure-details.png)
