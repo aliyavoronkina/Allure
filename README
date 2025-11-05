@@ -3,10 +3,10 @@
 ## Allure отчеты
 
 ### Главная страница отчета
-<img src="images/allure-main.png" width="800">
+<img src="https://raw.githubusercontent.com/aliyavoronkina/Allure/main/images/allure-main.png" width="800">
 
 ### Детали выполнения теста  
-<img src="images/allure-details.png" width="800">
+<img src="https://raw.githubusercontent.com/aliyavoronkina/Allure/main/images/allure-details.png" width="800">
 
 ## Запуск тестов
 ```bash
