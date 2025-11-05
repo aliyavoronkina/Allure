@@ -1,2 +1,18 @@
-![Скриншот](https://github.com/aliyavoronkina/Allure/raw/main/images/allure-main.png)
-![Скриншот](https://github.com/aliyavoronkina/Allure/raw/main/images/allure-detals.png)
+# Проект автоматизации тестирования доставки карт
+
+## Allure отчеты
+
+### Главная страница отчета
+![Главная страница Allure](images/allure-main.png)
+
+### Детали выполнения теста
+![Детали теста](images/allure-details.png)
+
+## Запуск тестов
+```bash
+./gradlew clean test
+./gradlew allureReport allureServe
+```
+
+## Технологии
+- Java, Selenide, JUnit 5, Allure Framework
