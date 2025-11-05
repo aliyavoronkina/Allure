@@ -1,28 +1,18 @@
 # Проект автоматизации тестирования доставки карт
 
-Проект включает автоматизацию тестирования функционала планирования доставки банковских карт с использованием Selenide и Allure.
-
 ## Allure отчеты
 
 ### Главная страница отчета
-![Главная страница Allure](images/allure-main.png)
+<img src="images/allure-main.png" width="800">
 
-### Детали выполнения теста
-![Детали теста](images/allure-details.png)
+### Детали выполнения теста  
+<img src="images/allure-details.png" width="800">
 
 ## Запуск тестов
-
 ```bash
-# Запуск всех тестов
 ./gradlew clean test
-
-# Генерация и открытие отчета Allure
 ./gradlew allureReport allureServe
 ```
 
 ## Технологии
-- Java
-- Selenide
-- JUnit 5
-- Allure Framework
-- Gradle
+- Java, Selenide, JUnit 5, Allure Framework
