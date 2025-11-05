@@ -3,10 +3,10 @@
 ## Allure отчеты
 
 ### Главная страница отчета
-<img src="images/Снимок экрана 2025-11-05 151853.png" width="800">
+![Главная страница Allure](images/allure-main.png)
 
 ### Детали выполнения теста  
-<img src="images/Снимок экрана 2025-11-05 151928.png" width="800">
+![Детали теста](images/allure-details.png)
 
 ## Запуск тестов
 ```bash
