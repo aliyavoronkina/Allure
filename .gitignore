@@ -1,0 +1,10 @@
+cat > .gitignore << EOF
+.gradle/
+build/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+allure-results/
+allure-report/
+EOF
