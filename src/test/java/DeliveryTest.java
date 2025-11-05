@@ -1,34 +1,48 @@
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
+// УБЕРИ ЭТИ ИМПОРТЫ:
+// import main.DataGenerator;
+// import main.UserInfo;
+import java.time.Duration;
 
 public class DeliveryTest {
 
+    @BeforeAll
+    static void setupAll() {
+        SelenideLogger.addListener("AllureSelenide",
+                new AllureSelenide()
+                        .screenshots(true)
+                        .savePageSource(true)
+        );
+    }
+
     @BeforeEach
     void setup() {
-        com.codeborne.selenide.Selenide.open("http://localhost:9999");
+        Selenide.open("http://localhost:9999");
     }
 
     @Test
     void shouldSuccessfulPlanAndReplanMeeting() {
-        DataGenerator.UserInfo user = DataGenerator.generateUser();
+        UserInfo user = DataGenerator.generateUser();
         String firstDate = DataGenerator.generateDate(4);
-        String secondDate = DataGenerator.generateDate(7);
 
-        // Заполняем форму
-        com.codeborne.selenide.Selenide.$("[data-test-id=city] input").setValue(user.getCity());
-        com.codeborne.selenide.Selenide.$("[data-test-id=date] input")
-                .sendKeys(org.openqa.selenium.Keys.chord(org.openqa.selenium.Keys.SHIFT,
-                                org.openqa.selenium.Keys.HOME),
-                        org.openqa.selenium.Keys.BACK_SPACE);
-        com.codeborne.selenide.Selenide.$("[data-test-id=date] input").setValue(firstDate);
-        com.codeborne.selenide.Selenide.$("[data-test-id=name] input").setValue(user.getName());
-        com.codeborne.selenide.Selenide.$("[data-test-id=phone] input").setValue(user.getPhone());
-        com.codeborne.selenide.Selenide.$("[data-test-id=agreement]").click();
-        com.codeborne.selenide.Selenide.$(".button").click();
+        Selenide.$("[data-test-id=city] input").setValue(user.getCity());
+        Selenide.$("[data-test-id=date] input")
+                .sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
+        Selenide.$("[data-test-id=date] input").setValue(firstDate);
+        Selenide.$("[data-test-id=name] input").setValue(user.getName());
+        Selenide.$("[data-test-id=phone] input").setValue(user.getPhone());
+        Selenide.$("[data-test-id=agreement]").click();
+        Selenide.$(".button").click();
 
-        // Проверяем
-        com.codeborne.selenide.Selenide.$("[data-test-id=success-notification] .notification__content")
-                .shouldHave(com.codeborne.selenide.Condition.text("Встреча успешно запланирована на " + firstDate),
-                        java.time.Duration.ofSeconds(15));
+        Selenide.$("[data-test-id=success-notification] .notification__content")
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + firstDate),
+                        Duration.ofSeconds(15));
     }
 }

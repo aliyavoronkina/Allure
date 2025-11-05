@@ -1,4 +1,3 @@
-cat > .gitignore << EOF
 .gradle/
 build/
 .idea/
@@ -7,4 +6,3 @@ build/
 Thumbs.db
 allure-results/
 allure-report/
-EOF

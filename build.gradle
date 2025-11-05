@@ -16,22 +16,9 @@ dependencies {
 }
 
 allure {
-    adapter {
-        aspectjWeaver.set(true)
-        frameworks {
-            junit5 {
-                adapterVersion.set("2.24.0")
-            }
-        }
-    }
-    report {
-        version.set("2.24.0")
-    }
+    version = '2.24.0'
 }
 
 test {
     useJUnitPlatform()
-    systemProperties = [
-            'selenide.headless': System.getProperty('selenide.headless', 'true')
-    ]
 }
